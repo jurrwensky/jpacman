@@ -114,7 +114,7 @@ public class Player extends Unit {
      *
      * @param killer is set if collision with ghost happens.
      */
-    public void setKiller(Unit killer) {
+    private void setKiller(Unit killer) {
         this.killer =  killer;
     }
 
