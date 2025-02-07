@@ -44,6 +44,9 @@ public class Player extends Unit {
     public int getLives(){
         return lives;
     }
+    private void decrementLives(){
+        lives--;
+    }
 
     /**
      * Creates a new player with a score of 0 points.
@@ -87,9 +90,7 @@ public class Player extends Unit {
         this.alive = isAlive;
     }
 
-    private void decrementLives(){
-        lives--;
-    }
+
 
     public void collisionJoueur(Unit killer){
         decrementLives();
