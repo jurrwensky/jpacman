@@ -30,6 +30,10 @@ public class ScorePanel extends JPanel {
     private final Map<Player, JLabel> scoreLabels;
 
     /**
+     * The map of players and the labels their lives are on.
+     */
+    private final Map<Player, JLabel> livesLabels;
+    /**
      * The default way in which the score is shown.
      */
     public static final ScoreFormatter DEFAULT_SCORE_FORMATTER =
@@ -55,11 +59,19 @@ public class ScorePanel extends JPanel {
         for (int i = 1; i <= players.size(); i++) {
             add(new JLabel("Player " + i, JLabel.CENTER));
         }
+
         scoreLabels = new LinkedHashMap<>();
+        livesLabels = new LinkedHashMap<>();
         for (Player player : players) {
             JLabel scoreLabel = new JLabel("0", JLabel.CENTER);
             scoreLabels.put(player, scoreLabel);
             add(scoreLabel);
+        }
+        // Lives Labels
+        for (Player player : players) {
+            JLabel livesLabel = new JLabel("Lives: " + player.getLives(), JLabel.CENTER);
+            livesLabels.put(player, livesLabel);
+            add(livesLabel);
         }
     }
 
@@ -75,6 +87,7 @@ public class ScorePanel extends JPanel {
             }
             score += scoreFormatter.format(player);
             entry.getValue().setText(score);
+            livesLabels.get(player).setText("Lives: " + player.getLives());
         }
     }
 
