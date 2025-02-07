@@ -33,7 +33,7 @@ public class Launcher {
     private PacManUI pacManUI;
     private Game game;
 
-    private final static int LIVES = 3;
+    private static final int LIVES = 3;
 
     /**
      * @return The game object this launcher will start when {@link #launch()}
