@@ -35,8 +35,8 @@ public class GameFactory {
      *             The way to calculate points upon collisions.
      * @return A new single player game.
      */
-    public Game createSinglePlayerGame(Level level, PointCalculator pointCalculator) {
-        return new SinglePlayerGame(playerFactory.createPacMan(), level, pointCalculator);
+    public Game createSinglePlayerGame(Level level, PointCalculator pointCalculator , int lives) {
+        return new SinglePlayerGame(playerFactory.createPacMan(lives), level, pointCalculator);
     }
 
     /**

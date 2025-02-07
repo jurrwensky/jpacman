@@ -33,6 +33,8 @@ public class Launcher {
     private PacManUI pacManUI;
     private Game game;
 
+    private final int LIVES = 3;
+
     /**
      * @return The game object this launcher will start when {@link #launch()}
      *         is called.
@@ -70,7 +72,7 @@ public class Launcher {
     public Game makeGame() {
         GameFactory gf = getGameFactory();
         Level level = makeLevel();
-        game = gf.createSinglePlayerGame(level, loadPointCalculator());
+        game = gf.createSinglePlayerGame(level, loadPointCalculator(),LIVES);
         return game;
     }
 

@@ -29,8 +29,8 @@ public class PlayerFactory {
      *
      * @return A new player.
      */
-    public Player createPacMan() {
-        return new Player(getSprites().getPacmanSprites(), getSprites().getPacManDeathAnimation(),3);
+    public Player createPacMan(int lives) {
+        return new Player(getSprites().getPacmanSprites(), getSprites().getPacManDeathAnimation(),lives);
     }
 
     /**
